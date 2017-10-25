@@ -9,6 +9,7 @@ RUN apk --no-cache add --virtual runtime-dependencies \
       git \
       build-base \
       libusb-dev \
+      libftdi1-dev \
       automake \
       autoconf \
       libtool &&\
