@@ -9,7 +9,7 @@ RUN apk --no-cache add --virtual runtime-dependencies \
       build-base \
       libusb-dev \
       automake \
-      autoconf 
+      autoconf \
       libtool &&\
     git clone --depth 1 git://git.code.sf.net/p/openocd/code openocd &&\
     cd openocd &&\
