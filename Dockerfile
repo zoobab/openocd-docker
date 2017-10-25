@@ -3,7 +3,8 @@ FROM alpine:3.6
 WORKDIR /tmp
 
 RUN apk --no-cache add --virtual runtime-dependencies \
-      libusb &&\
+      libusb \
+      libftdi1 &&\
     apk --no-cache add --virtual build-dependencies \
       git \
       build-base \
