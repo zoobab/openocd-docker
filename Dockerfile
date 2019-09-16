@@ -1,4 +1,6 @@
-FROM arm32v6/alpine:3.6
+FROM arm32v6/alpine:3.10
+
+COPY page-size.patch /tmp/
 
 WORKDIR /tmp
 
@@ -13,8 +15,9 @@ RUN apk --no-cache add --virtual runtime-dependencies \
       automake \
       autoconf \
       libtool &&\
-    git clone --depth 1 git://git.code.sf.net/p/openocd/code openocd &&\
+    git clone --depth 1 git://repo.or.cz/openocd.git openocd &&\
     cd openocd &&\
+    git apply /tmp/page-size.patch &&\
     ./bootstrap &&\
     ./configure --enable-sysfsgpio --enable-bcm2835gpio &&\
     make &&\
