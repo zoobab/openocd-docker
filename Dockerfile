@@ -26,8 +26,11 @@ RUN apk --no-cache add --virtual runtime-dependencies \
     rm -rf /var/cache/apk/* &&\
     rm -rf /tmp/*
 
+COPY z3r0.cfg /usr/local/share/openocd/scripts/interface/z3r0.cfg
+
 VOLUME /dev/mem
 VOLUME /sys/class/gpio
 
-EXPOSE 1337
+EXPOSE 4444
+EXPOSE 6666
 
